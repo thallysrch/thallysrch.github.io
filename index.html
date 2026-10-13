@@ -2,184 +2,668 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Thallys Rocha — Senior QA Engineer, Software Quality and Test Automation Portfolio.">
-<title>Thallys Rocha | Senior QA Engineer</title>
-<style>
-:root {
-  --bg:#07110f; --panel:#0d1b18; --text:#edf8f4;
-  --muted:#9db5ac; --accent:#5ee6bd; --border:#203a32;
-}
-* { box-sizing:border-box; scroll-behavior:smooth; }
-body {
-  margin:0; background:var(--bg); color:var(--text);
-  font-family:Inter,Segoe UI,Arial,sans-serif; line-height:1.7;
-}
-a { color:var(--accent); text-decoration:none; }
-a:hover { opacity:.8; }
-.container { width:min(1080px,90%); margin:auto; }
-header {
-  position:sticky; top:0; z-index:10; background:#07110fee;
-  backdrop-filter:blur(12px); border-bottom:1px solid var(--border);
-}
-nav { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
-.logo { font-weight:800; font-size:19px; color:var(--text); }
-.logo span { color:var(--accent); }
-.navlinks { display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
-.navlinks a { color:var(--muted); font-size:13px; }
-button {
-  cursor:pointer; background:var(--accent); color:#06120e; border:0;
-  padding:9px 14px; border-radius:8px; font-weight:800;
-}
-.hero { padding:100px 0 80px; }
-.eyebrow { color:var(--accent); text-transform:uppercase; letter-spacing:3px; font-size:12px; font-weight:800; }
-h1 { font-size:clamp(42px,7vw,76px); line-height:1.08; letter-spacing:-2px; margin:18px 0; }
-h1 span, h2 span { color:var(--accent); }
-.intro { color:var(--muted); max-width:690px; font-size:18px; }
-.actions { display:flex; gap:14px; flex-wrap:wrap; margin-top:28px; }
-.btn { display:inline-block; padding:11px 17px; border:1px solid var(--accent); border-radius:8px; font-weight:700; }
-.btn.primary { background:var(--accent); color:#06120e; }
-section { padding:65px 0; border-top:1px solid var(--border); }
-h2 { font-size:clamp(28px,4vw,40px); margin:0 0 12px; }
-.subtitle { color:var(--muted); margin:0 0 28px; }
-.grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
-.card { background:var(--panel); border:1px solid var(--border); padding:23px; border-radius:14px; }
-.card h3 { margin:0 0 10px; font-size:18px; }
-.card p { color:var(--muted); font-size:14px; margin:0; }
-.tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
-.tag { color:var(--accent); background:#102b23; padding:4px 9px; border-radius:5px; font-size:12px; }
-.skills { display:flex; flex-wrap:wrap; gap:10px; }
-.skills span { border:1px solid var(--border); padding:9px 13px; border-radius:8px; background:var(--panel); }
-.timeline { border-left:2px solid var(--accent); padding:0 0 25px 23px; margin-left:8px; }
-.timeline h3 { margin:0; }
-.timeline .date { color:var(--accent); font-size:13px; }
-.timeline p { color:var(--muted); margin-bottom:0; }
-.contact { display:flex; flex-wrap:wrap; gap:12px; }
-footer { padding:25px 0; border-top:1px solid var(--border); color:var(--muted); font-size:13px; }
-@media(max-width:760px) {
-  .grid { grid-template-columns:1fr; }
-  .navlinks { gap:10px; }
-  .navlinks a { font-size:12px; }
-  nav { padding:12px 0; align-items:flex-start; }
-  .hero { padding:65px 0; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Thallys Rocha — Senior QA Engineer, SDET, QA Lead and Test Automation professional.">
+  <meta name="theme-color" content="#07110f">
+  <title>Thallys Rocha | Senior QA Engineer</title>
+
+  <style>
+    :root {
+      --bg: #07110f;
+      --panel: #0d1b18;
+      --text: #edf8f4;
+      --muted: #a0b6ae;
+      --accent: #5ee6bd;
+      --border: #203a32;
+      --max-width: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      opacity: 0.82;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(var(--max-width), 90%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(7, 17, 15, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      color: var(--text);
+      font-weight: 800;
+      font-size: 20px;
+      white-space: nowrap;
+    }
+
+    .logo span, h1 span, h2 span {
+      color: var(--accent);
+    }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .navlinks a {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .language-button {
+      background: var(--accent);
+      color: #07110f;
+      border: 0;
+      border-radius: 7px;
+      padding: 8px 12px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 105px 0 90px;
+      border: 0;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 800;
+    }
+
+    h1 {
+      max-width: 900px;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      margin: 20px 0;
+    }
+
+    .intro {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .actions, .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-weight: 700;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #07110f;
+    }
+
+    section.content-section {
+      padding: 65px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    h2 {
+      font-size: clamp(29px, 4vw, 40px);
+      line-height: 1.2;
+      margin: 0 0 14px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin: 0 0 28px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin: 0 0 18px;
+    }
+
+    .about-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 14px;
+    }
+
+    .experience-item {
+      position: relative;
+      border-left: 2px solid var(--accent);
+      padding: 0 0 32px 24px;
+      margin-left: 8px;
+    }
+
+    .experience-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .experience-date {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .experience-item h3 {
+      margin: 5px 0;
+      font-size: 20px;
+    }
+
+    .company {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .experience-item p {
+      color: var(--muted);
+      margin: 10px 0 0;
+    }
+
+    .experience-item ul {
+      color: var(--muted);
+      padding-left: 20px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .project-card h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      background: #102b23;
+      color: var(--accent);
+      border-radius: 5px;
+      padding: 4px 8px;
+      font-size: 12px;
+    }
+
+    .contact-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 26px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 25px 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 760px) {
+      nav {
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .navlinks {
+        justify-content: flex-start;
+        gap: 12px;
+      }
+
+      .hero {
+        padding: 70px 0;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section.content-section {
+        padding: 48px 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<header>
-  <nav class="container">
-    <a class="logo" href="#home">THALLYS<span>.</span></a>
-    <div class="navlinks">
-      <a href="#about" data-en="About" data-pt="Sobre">About</a>
-      <a href="#skills" data-en="Skills" data-pt="Habilidades">Skills</a>
-      <a href="#projects" data-en="Projects" data-pt="Projetos">Projects</a>
-      <a href="#experience" data-en="Experience" data-pt="Experiência">Experience</a>
-      <a href="#contact" data-en="Contact" data-pt="Contato">Contact</a>
-      <button id="language" type="button" onclick="toggleLanguage()">PT-BR</button>
-    </div>
-  </nav>
-</header>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#home">THALLYS<span>.</span></a>
 
-<main>
-<div class="container">
-  <section class="hero" id="home" style="border:0">
-    <div class="eyebrow" data-en="Senior QA Engineer · Quality Advocate" data-pt="QA Sênior · Qualidade de Software">Senior QA Engineer · Quality Advocate</div>
-    <h1 data-en="Building quality.<br><span>One test at a time.</span>" data-pt="Construindo qualidade.<br><span>Um teste por vez.</span>">Building quality.<br><span>One test at a time.</span></h1>
-    <p class="intro" data-en="I'm a QA professional with 6+ years of experience in software testing, test automation, and quality engineering for web, mobile, and API solutions." data-pt="Sou profissional de QA com mais de 6 anos de experiência em testes de software, automação e engenharia de qualidade para aplicações web, mobile e APIs.">I'm a QA professional with 6+ years of experience in software testing, test automation, and quality engineering for web, mobile, and API solutions.</p>
-    <div class="actions">
-      <a class="btn primary" href="#projects" data-en="Explore my work ↓" data-pt="Conheça meus projetos ↓">Explore my work ↓</a>
-      <a class="btn" href="https://www.linkedin.com/in/thallys-rocha/" target="_blank" rel="noopener">LinkedIn ↗</a>
-    </div>
-  </section>
+      <div class="navlinks">
+        <a href="#about" data-en="About" data-pt="Sobre">About</a>
+        <a href="#skills" data-en="Skills" data-pt="Habilidades">Skills</a>
+        <a href="#experience" data-en="Experience" data-pt="Experiência">Experience</a>
+        <a href="#projects" data-en="Projects" data-pt="Projetos">Projects</a>
+        <a href="#contact" data-en="Contact" data-pt="Contato">Contact</a>
+        <button id="language-button" class="language-button"
+                type="button" onclick="toggleLanguage()">PT-BR</button>
+      </div>
+    </nav>
+  </header>
 
-  <section id="about">
-    <h2 data-en="About <span>me</span>" data-pt="Sobre <span>mim</span>">About <span>me</span></h2>
-    <p class="subtitle" data-en="Quality is more than finding bugs — it's preventing them." data-pt="Qualidade é mais do que encontrar bugs — é ajudar a preveni-los.">Quality is more than finding bugs — it's preventing them.</p>
-    <div class="card">
-      <p data-en="I work across the software development lifecycle, from understanding requirements and designing test strategies to executing exploratory and regression tests and building automated checks. I've also worked with QA leadership, process improvement, defect reporting, and quality metrics to support informed release decisions." data-pt="Atuo em diferentes etapas do ciclo de desenvolvimento de software, desde o entendimento dos requisitos e planejamento da estratégia de testes até testes exploratórios, regressão e automação. Também tenho experiência com liderança de QA, melhoria de processos, relatórios de defeitos e indicadores de qualidade para apoiar decisões de release.">I work across the software development lifecycle, from understanding requirements and designing test strategies to executing exploratory and regression tests and building automated checks. I've also worked with QA leadership, process improvement, defect reporting, and quality metrics to support informed release decisions.</p>
-    </div>
-  </section>
+  <main>
+    <div class="container">
 
-  <section id="skills">
-    <h2 data-en="Technical <span>skills</span>" data-pt="Habilidades <span>técnicas</span>">Technical <span>skills</span></h2>
-    <p class="subtitle" data-en="Tools and practices I use in quality engineering." data-pt="Ferramentas e práticas que utilizo em engenharia de qualidade.">Tools and practices I use in quality engineering.</p>
-    <div class="skills">
-      <span>Cypress</span><span>Playwright</span><span>TypeScript</span><span>JavaScript</span>
-      <span>Postman</span><span>Newman</span><span>REST APIs</span><span>SQL</span>
-      <span>MongoDB</span><span>Jira</span><span>Azure DevOps</span><span>Git</span>
-      <span>CI/CD</span><span>Manual Testing</span><span>Regression Testing</span>
-      <span>Exploratory Testing</span><span>Test Planning</span><span>Defect Management</span>
-      <span>GitHub Copilot</span><span>ChatGPT</span>
-    </div>
-  </section>
+      <section class="hero" id="home">
+        <div class="eyebrow"
+             data-en="Senior QA | SDET | QA Lead"
+             data-pt="QA Sênior | SDET | QA Lead">
+          Senior QA | SDET | QA Lead
+        </div>
 
-  <section id="projects">
-    <h2 data-en="Featured <span>projects</span>" data-pt="Projetos em <span>destaque</span>">Featured <span>projects</span></h2>
-    <p class="subtitle" data-en="Examples of testing work and portfolio demonstrations. Replace demo items with verified project details before presenting them as completed work." data-pt="Exemplos de trabalhos de teste e demonstrações para portfólio. Substitua os exemplos pelos detalhes reais dos projetos antes de apresentá-los como trabalhos concluídos.">Examples of testing work and portfolio demonstrations. Replace demo items with verified project details before presenting them as completed work.</p>
-    <div class="grid">
-      <article class="card">
-        <h3>Cypress E2E Automation</h3>
-        <p data-en="Demonstration of an end-to-end test suite with reusable commands, structured tests, and environment configuration." data-pt="Demonstração de uma suíte de testes end-to-end com comandos reutilizáveis, testes organizados e configuração de ambientes.">Demonstration of an end-to-end test suite with reusable commands, structured tests, and environment configuration.</p>
-        <div class="tags"><span class="tag">Cypress</span><span class="tag">JavaScript</span><span class="tag">E2E</span></div>
-      </article>
-      <article class="card">
-        <h3>Playwright Test Suite</h3>
-        <p data-en="Demonstration of browser automation using TypeScript, fixtures, selectors, and reusable page objects." data-pt="Demonstração de automação de navegador com TypeScript, fixtures, seletores e Page Objects reutilizáveis.">Demonstration of browser automation using TypeScript, fixtures, selectors, and reusable page objects.</p>
-        <div class="tags"><span class="tag">Playwright</span><span class="tag">TypeScript</span><span class="tag">Automation</span></div>
-      </article>
-      <article class="card">
-        <h3>API Testing with Postman</h3>
-        <p data-en="Demonstration of API validation, chained requests, response assertions, and automated execution with Newman." data-pt="Demonstração de validação de APIs, requisições encadeadas, verificações de resposta e execução automatizada com Newman.">Demonstration of API validation, chained requests, response assertions, and automated execution with Newman.</p>
-        <div class="tags"><span class="tag">Postman</span><span class="tag">Newman</span><span class="tag">API</span></div>
-      </article>
-    </div>
-  </section>
+        <h1 data-en="Engineering quality.<br><span>Delivering confidence.</span>"
+            data-pt="Engenharia de qualidade.<br><span>Entregando confiança.</span>">
+          Engineering quality.<br><span>Delivering confidence.</span>
+        </h1>
 
-  <section id="experience">
-    <h2 data-en="Professional <span>experience</span>" data-pt="Experiência <span>profissional</span>">Professional <span>experience</span></h2>
-    <p class="subtitle" data-en="A selection of my quality engineering responsibilities." data-pt="Uma seleção das minhas responsabilidades em engenharia de qualidade.">A selection of my quality engineering responsibilities.</p>
-    <div class="timeline">
-      <div class="date" data-en="Current / Most recent" data-pt="Atual / Mais recente">Current / Most recent</div>
-      <h3>Senior QA Analyst</h3>
-      <p data-en="Web quality validation, test scenarios, defect tracking, and test automation with TypeScript and Playwright." data-pt="Validação de qualidade web, cenários de teste, acompanhamento de defeitos e automação com TypeScript e Playwright.">Web quality validation, test scenarios, defect tracking, and test automation with TypeScript and Playwright.</p>
-    </div>
-    <div class="timeline">
-      <div class="date">2022 – 2025</div>
-      <h3>QA Lead / QA Engineer</h3>
-      <p data-en="Test strategy, regression planning, automation improvements, defect metrics, and quality reporting for stakeholders." data-pt="Estratégia de testes, planejamento de regressão, melhorias na automação, indicadores de defeitos e relatórios de qualidade para stakeholders.">Test strategy, regression planning, automation improvements, defect metrics, and quality reporting for stakeholders.</p>
-    </div>
-    <div class="timeline">
-      <div class="date">2020 – 2022</div>
-      <h3>QA Tester</h3>
-      <p data-en="Manual and automated web testing, API validation with Postman, and database checks using SQL." data-pt="Testes web manuais e automatizados, validação de APIs com Postman e verificações de banco de dados usando SQL.">Manual and automated web testing, API validation with Postman, and database checks using SQL.</p>
-    </div>
-    <p class="subtitle" data-en="Please verify dates and titles against your CV before publishing." data-pt="Confira as datas e os cargos com seu currículo antes de publicar.">Please verify dates and titles against your CV before publishing.</p>
-  </section>
+        <p class="intro"
+           data-en="Senior QA professional with 6+ years of experience in software quality, test automation, quality engineering, and team collaboration across web, mobile, and API projects."
+           data-pt="Profissional de QA Sênior com mais de 6 anos de experiência em Qualidade de Software, automação de testes, engenharia de qualidade e colaboração com equipes em projetos web, mobile e APIs.">
+          Senior QA professional with 6+ years of experience in software quality, test automation, quality engineering, and team collaboration across web, mobile, and API projects.
+        </p>
 
-  <section id="contact">
-    <h2 data-en="Let's work <span>together</span>" data-pt="Vamos trabalhar <span>juntos</span>">Let's work <span>together</span></h2>
-    <p class="subtitle" data-en="Open to remote opportunities in QA, test automation, and quality engineering." data-pt="Aberto a oportunidades remotas em QA, automação de testes e engenharia de qualidade.">Open to remote opportunities in QA, test automation, and quality engineering.</p>
-    <div class="contact">
-      <a class="btn primary" href="https://www.linkedin.com/in/thallys-rocha/" target="_blank" rel="noopener">LinkedIn ↗</a>
-      <a class="btn" href="mailto:thallysrocha41@gmail.com">Email ↗</a>
-      <a class="btn" href="https://github.com/thallysrch" target="_blank" rel="noopener">GitHub ↗</a>
+        <div class="actions">
+          <a class="btn primary" href="#experience"
+             data-en="Professional experience ↓"
+             data-pt="Experiência profissional ↓">
+            Professional experience ↓
+          </a>
+          <a class="btn" href="https://www.linkedin.com/in/thallys-rocha/"
+             target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        </div>
+      </section>
+
+      <section class="content-section" id="about">
+        <h2 data-en="About <span>me</span>" data-pt="Sobre <span>mim</span>">
+          About <span>me</span>
+        </h2>
+
+        <p class="subtitle"
+           data-en="Quality strategy, automation, leadership, and continuous improvement."
+           data-pt="Estratégia de qualidade, automação, liderança e melhoria contínua.">
+          Quality strategy, automation, leadership, and continuous improvement.
+        </p>
+
+        <div class="card about-copy">
+          <p data-en="I'm a Senior QA professional with 6+ years of experience in software quality, working with web and mobile applications and APIs in agile and international environments. Throughout my career, I've contributed to different stages of the QA lifecycle, from requirements analysis and test strategy definition to execution, defect investigation, automation, quality metrics, and release validation."
+             data-pt="Sou profissional de QA Sênior com mais de 6 anos de experiência em Qualidade de Software, atuando com aplicações web, mobile e APIs em ambientes ágeis e internacionais. Ao longo da minha carreira, contribuí em diferentes etapas do ciclo de QA, desde a análise de requisitos e definição de estratégias de testes até a execução, investigação de defeitos, automação, métricas de qualidade e validação de releases.">
+            I'm a Senior QA professional with 6+ years of experience in software quality, working with web and mobile applications and APIs in agile and international environments. Throughout my career, I've contributed to different stages of the QA lifecycle, from requirements analysis and test strategy definition to execution, defect investigation, automation, quality metrics, and release validation.
+          </p>
+
+          <p data-en="My experience also includes QA team coordination, quality management, defining testing methodologies and processes, risk analysis, test planning, and oversight of automated testing initiatives. I collaborate with developers and stakeholders to improve coverage, investigate root causes, communicate risks, and support reliable release decisions."
+             data-pt="Minha experiência também inclui coordenação de equipes de QA, gerenciamento da qualidade, definição de metodologias e processos de testes, análise de riscos, planejamento de testes e gerenciamento de iniciativas de automação. Trabalho em colaboração com desenvolvedores e stakeholders para melhorar a cobertura, investigar causas-raiz, comunicar riscos e apoiar decisões confiáveis de release.">
+            My experience also includes QA team coordination, quality management, defining testing methodologies and processes, risk analysis, test planning, and oversight of automated testing initiatives.
+          </p>
+
+          <p data-en="My technical background includes UI and end-to-end automation with Cypress and Playwright, API testing with Postman and Newman, SQL and MongoDB data validation, and test execution in CI/CD pipelines using Azure DevOps. My testing experience includes functional, exploratory, regression, integration, web, and mobile testing."
+             data-pt="Minha experiência técnica inclui automação de interface e testes End-to-End com Cypress e Playwright, testes de API com Postman e Newman, validação de dados com SQL e MongoDB e execução de testes em pipelines CI/CD utilizando Azure DevOps. Minha experiência em testes inclui testes funcionais, exploratórios, de regressão, integração, web e mobile.">
+            My technical background includes UI and end-to-end automation with Cypress and Playwright, API testing with Postman and Newman, SQL and MongoDB data validation, and test execution in CI/CD pipelines using Azure DevOps.
+          </p>
+
+          <p data-en="I also use AI tools such as ChatGPT and GitHub Copilot to support test scenario design, automation development, troubleshooting, documentation, and productivity, while keeping critical thinking and QA validation central to the process."
+             data-pt="Também utilizo ferramentas de IA, como ChatGPT e GitHub Copilot, para apoiar a criação de cenários de teste, desenvolvimento de automações, investigação de problemas, documentação e produtividade, mantendo o pensamento crítico e a validação de QA como elementos centrais do processo.">
+            I also use AI tools such as ChatGPT and GitHub Copilot to support test scenario design, automation development, troubleshooting, documentation, and productivity.
+          </p>
+
+          <p data-en="I hold a Bachelor's degree in Information Systems from UNIMATER and have advanced English proficiency for professional communication with international teams."
+             data-pt="Sou bacharel em Sistemas de Informação pela UNIMATER e possuo inglês avançado para comunicação profissional com equipes internacionais.">
+            I hold a Bachelor's degree in Information Systems from UNIMATER and have advanced English proficiency for professional communication with international teams.
+          </p>
+        </div>
+      </section>
+
+      <section class="content-section" id="skills">
+        <h2 data-en="Technical <span>skills</span>"
+            data-pt="Habilidades <span>técnicas</span>">
+          Technical <span>skills</span>
+        </h2>
+
+        <p class="subtitle"
+           data-en="Technologies, tools, and quality practices."
+           data-pt="Tecnologias, ferramentas e práticas de qualidade.">
+          Technologies, tools, and quality practices.
+        </p>
+
+        <div class="skills">
+          <span class="skill">Cypress</span>
+          <span class="skill">Playwright</span>
+          <span class="skill">TypeScript</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">Postman</span>
+          <span class="skill">Newman</span>
+          <span class="skill">REST APIs</span>
+          <span class="skill">SQL</span>
+          <span class="skill">MongoDB</span>
+          <span class="skill">Jira</span>
+          <span class="skill">Azure DevOps</span>
+          <span class="skill">Git</span>
+          <span class="skill">CI/CD</span>
+          <span class="skill">Functional Testing</span>
+          <span class="skill">Exploratory Testing</span>
+          <span class="skill">Regression Testing</span>
+          <span class="skill">Integration Testing</span>
+          <span class="skill">End-to-End Testing</span>
+          <span class="skill">Test Planning</span>
+          <span class="skill">Quality Metrics</span>
+          <span class="skill">QA Leadership</span>
+          <span class="skill">ChatGPT</span>
+          <span class="skill">GitHub Copilot</span>
+        </div>
+      </section>
+
+      <section class="content-section" id="experience">
+        <h2 data-en="Professional <span>experience</span>"
+            data-pt="Experiência <span>profissional</span>">
+          Professional <span>experience</span>
+        </h2>
+
+        <p class="subtitle"
+           data-en="Quality engineering, test strategy, and software validation."
+           data-pt="Engenharia de qualidade, estratégia de testes e validação de software.">
+          Quality engineering, test strategy, and software validation.
+        </p>
+
+        <article class="experience-item">
+          <div class="experience-date"
+               data-en="May 2026 – Present (confirm dates)"
+               data-pt="Maio de 2026 – Atual (confirme as datas)">
+            May 2026 – Present (confirm dates)
+          </div>
+          <h3>Senior QA Analyst</h3>
+          <div class="company">Atena Solutions / Client Project</div>
+          <p data-en="Quality assurance for web experiences and digital components, including functional validation, test scenario design, defect tracking, and automation activities."
+             data-pt="Garantia da qualidade de experiências web e componentes digitais, incluindo validação funcional, elaboração de cenários de teste, acompanhamento de defeitos e atividades de automação.">
+            Quality assurance for web experiences and digital components, including functional validation, test scenario design, defect tracking, and automation activities.
+          </p>
+          <ul>
+            <li data-en="Validate website functionality and component behavior."
+                data-pt="Validar funcionalidades de sites e comportamento de componentes.">
+              Validate website functionality and component behavior.
+            </li>
+            <li data-en="Create test scenarios and execute functional and regression checks."
+                data-pt="Criar cenários de teste e executar verificações funcionais e de regressão.">
+              Create test scenarios and execute functional and regression checks.
+            </li>
+            <li data-en="Track defects and collaborate with teams to support quality improvements."
+                data-pt="Registrar defeitos e colaborar com as equipes para melhorar a qualidade.">
+              Track defects and collaborate with teams to support quality improvements.
+            </li>
+            <li data-en="Work with TypeScript and Playwright for test automation."
+                data-pt="Trabalhar com TypeScript e Playwright na automação de testes.">
+              Work with TypeScript and Playwright for test automation.
+            </li>
+          </ul>
+        </article>
+
+        <article class="experience-item">
+          <div class="experience-date">2022 – 2025</div>
+          <h3>QA Lead / QA Engineer</h3>
+          <div class="company">Zallpy Digital · Américas / TicketLog project</div>
+          <p data-en="Led QA planning and quality activities, supporting test strategy, automation decisions, regression planning, and quality reporting for project stakeholders."
+             data-pt="Liderei o planejamento e as atividades de QA, apoiando a estratégia de testes, decisões de automação, planejamento de regressão e relatórios de qualidade para stakeholders do projeto.">
+            Led QA planning and quality activities, supporting test strategy, automation decisions, regression planning, and quality reporting for project stakeholders.
+          </p>
+          <ul>
+            <li data-en="Defined test approaches and supported continuous improvement of QA processes."
+                data-pt="Defini abordagens de teste e apoiei a melhoria contínua dos processos de QA.">
+              Defined test approaches and supported continuous improvement of QA processes.
+            </li>
+            <li data-en="Monitored defect trends, coverage, risks, and release readiness."
+                data-pt="Acompanhei tendências de defeitos, cobertura, riscos e prontidão para releases.">
+              Monitored defect trends, coverage, risks, and release readiness.
+            </li>
+            <li data-en="Worked with Cypress, API testing, Postman/Newman, and Azure DevOps pipelines."
+                data-pt="Trabalhei com Cypress, testes de API, Postman/Newman e pipelines do Azure DevOps.">
+              Worked with Cypress, API testing, Postman/Newman, and Azure DevOps pipelines.
+            </li>
+          </ul>
+        </article>
+
+        <article class="experience-item">
+          <div class="experience-date">October 2020 – April 2022</div>
+          <h3>QA Tester</h3>
+          <div class="company">Viasoft</div>
+          <p data-en="Performed software testing activities for web applications, API validations, and database checks to help identify defects and verify expected behavior."
+             data-pt="Realizei atividades de teste de software em aplicações web, validações de APIs e verificações em bancos de dados para identificar defeitos e confirmar o comportamento esperado.">
+            Performed software testing activities for web applications, API validations, and database checks to help identify defects and verify expected behavior.
+          </p>
+          <ul>
+            <li data-en="Executed functional and regression tests."
+                data-pt="Executei testes funcionais e de regressão.">
+              Executed functional and regression tests.
+            </li>
+            <li data-en="Validated APIs using Postman and inspected data using SQL."
+                data-pt="Validei APIs utilizando Postman e consultei dados com SQL.">
+              Validated APIs using Postman and inspected data using SQL.
+            </li>
+            <li data-en="Documented defects and collaborated with development teams."
+                data-pt="Documentei defeitos e colaborei com as equipes de desenvolvimento.">
+              Documented defects and collaborated with development teams.
+            </li>
+          </ul>
+        </article>
+
+        <p class="subtitle"
+           data-en="Please verify employer names, titles, and dates against your LinkedIn profile before sharing this portfolio."
+           data-pt="Confira nomes das empresas, cargos e datas com seu perfil do LinkedIn antes de divulgar este portfólio.">
+          Please verify employer names, titles, and dates against your LinkedIn profile before sharing this portfolio.
+        </p>
+      </section>
+
+      <section class="content-section" id="projects">
+        <h2 data-en="Testing <span>expertise</span>"
+            data-pt="Conhecimentos em <span>testes</span>">
+          Testing <span>expertise</span>
+        </h2>
+
+        <p class="subtitle"
+           data-en="Areas of practice, rather than claims about unpublished projects."
+           data-pt="Áreas de atuação, sem alegar projetos não publicados.">
+          Areas of practice, rather than claims about unpublished projects.
+        </p>
+
+        <div class="project-grid">
+          <article class="card project-card">
+            <h3>Cypress E2E Automation</h3>
+            <p data-en="Experience building and maintaining UI automation, reusable commands, test organization, and environment configuration."
+               data-pt="Experiência na criação e manutenção de automação de interface, comandos reutilizáveis, organização de testes e configuração de ambientes.">
+              Experience building and maintaining UI automation, reusable commands, test organization, and environment configuration.
+            </p>
+            <div class="tags">
+              <span class="tag">Cypress</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">E2E</span>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <h3>Playwright Automation</h3>
+            <p data-en="Browser automation using TypeScript, structured tests, fixtures, selectors, and reusable page objects."
+               data-pt="Automação de navegador utilizando TypeScript, testes estruturados, fixtures, seletores e Page Objects reutilizáveis.">
+              Browser automation using TypeScript, structured tests, fixtures, selectors, and reusable page objects.
+            </p>
+            <div class="tags">
+              <span class="tag">Playwright</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">UI Testing</span>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <h3>API Testing</h3>
+            <p data-en="API validation using Postman and Newman, including chained requests, response assertions, and automated execution."
+               data-pt="Validação de APIs com Postman e Newman, incluindo requisições encadeadas, verificações de respostas e execução automatizada.">
+              API validation using Postman and Newman, including chained requests, response assertions, and automated execution.
+            </p>
+            <div class="tags">
+              <span class="tag">Postman</span>
+              <span class="tag">Newman</span>
+              <span class="tag">API</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section" id="contact">
+        <h2 data-en="Let's connect <span>!</span>"
+            data-pt="Vamos nos conectar <span>!</span>">
+          Let's connect <span>!</span>
+        </h2>
+
+        <p class="subtitle"
+           data-en="I'm open to remote opportunities in QA, test automation, and quality engineering."
+           data-pt="Estou aberto a oportunidades remotas em QA, automação de testes e engenharia de qualidade.">
+          I'm open to remote opportunities in QA, test automation, and quality engineering.
+        </p>
+
+        <div class="contact-card">
+          <p data-en="Feel free to contact me or explore my professional profile."
+             data-pt="Entre em contato ou conheça meu perfil profissional.">
+            Feel free to contact me or explore my professional profile.
+          </p>
+
+          <div class="contact-links">
+            <a class="btn primary" href="mailto:thallysrocha41@gmail.com">
+              Email ↗
+            </a>
+            <a class="btn" href="https://www.linkedin.com/in/thallys-rocha/"
+               target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a class="btn" href="https://github.com/thallysrch"
+               target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          </div>
+
+          <p><a href="mailto:thallysrocha41@gmail.com">thallysrocha41@gmail.com</a></p>
+        </div>
+      </section>
+
     </div>
-  </section>
-</div>
-</main>
-<footer><div class="container">© <span id="year"></span> Thallys Rocha · Senior QA Engineer</div></footer>
-<script>
-let currentLanguage = "en";
-function toggleLanguage() {
-  currentLanguage = currentLanguage === "en" ? "pt" : "en";
-  document.documentElement.lang = currentLanguage === "en" ? "en" : "pt-BR";
-  document.querySelectorAll("[data-en][data-pt]").forEach(element => {
-    element.innerHTML = element.dataset[currentLanguage];
-  });
-  document.getElementById("language").textContent = currentLanguage === "en" ? "PT-BR" : "EN";
-}
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Thallys Rocha</span>
+      <span data-en="Senior QA | SDET | Quality Engineering"
+            data-pt="QA Sênior | SDET | Engenharia de Qualidade">
+        Senior QA | SDET | Quality Engineering
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    let currentLanguage = "en";
+
+    function toggleLanguage() {
+      currentLanguage = currentLanguage === "en" ? "pt" : "en";
+
+      document.documentElement.lang =
+        currentLanguage === "en" ? "en" : "pt-BR";
+
+      document.querySelectorAll("[data-en][data-pt]").forEach((element) => {
+        element.innerHTML = element.dataset[currentLanguage];
+      });
+
+      document.getElementById("language-button").textContent =
+        currentLanguage === "en" ? "PT-BR" : "EN";
+    }
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
